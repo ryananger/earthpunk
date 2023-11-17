@@ -5,7 +5,7 @@ const Orbit = () => {
     const imageSize = window.innerHeight/12;
     const mod = window.innerWidth < 1000 ? 0.6 : 1.5;
     const containerRef = useRef(null);
-    const minRadius = 80;
+    const minRadius = 200;
     const orbitRadii = function() {
       var radii = [];
 
