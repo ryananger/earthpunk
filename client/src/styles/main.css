@@ -67,11 +67,11 @@
 
 @media (max-width: 540px) {
   .main {
-    height: unset;
+    padding-top: 4vh;
   }
 
   .open {
-    height: 1440px;
+    height: 1800px;
   }
 
   .projects {
@@ -82,7 +82,7 @@
 
   .projectCard {
     max-width: unset;
-    height: 400px;
+    height: 360px;
   }
 
   .projectImage {

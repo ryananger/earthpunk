@@ -35,7 +35,7 @@ const App = function() {
           </Slide>
         }
         center={
-          <Orbit />
+          window.innerWidth > 1100 && <Orbit />
         }
         open={1}
       />
