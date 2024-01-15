@@ -9,6 +9,11 @@ const Main = function() {
 
   const projects = [
     {
+      src: 'gardenSmart',
+      link: 'https://gardenSmart.earthpunk.art',
+      description: 'a quick reference for companion planting and growing information'
+    },
+    {
       src: 'toast',
       link: 'https://ryananger.github.io/toast',
       description: 'a sleek and modern restaurant presentation with menu and reservations'

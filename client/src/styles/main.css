@@ -52,9 +52,8 @@
 }
 
 .projectImage {
-  width: 100%;
+  width: 320px;
   border: 2px solid black;
-  box-sizing: border-box;
   border-radius: 24px;
   margin-bottom: 12px;
 }
