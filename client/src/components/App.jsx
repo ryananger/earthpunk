@@ -11,7 +11,6 @@ import Slide from './Slide.jsx';
 import Header from './tiles/Header.jsx';
 import Help from './tiles/Help.jsx';
 import Main from './tiles/Main.jsx';
-import Orbit from './Orbit.jsx';
 import MainTile from './MainTile.jsx';
 
 const App = function() {
@@ -31,11 +30,10 @@ const App = function() {
         }
         left={
           <Slide dir={'left'} time={2} delay={2}>
-            <div style={{height: '90%', width: '90%'}}><h3>interested in stepping gracefully into the future?</h3></div>
+            <div style={{height: '90%', width: '90%'}}>
+              <h3>interested in stepping gracefully into the future?</h3>
+            </div>
           </Slide>
-        }
-        center={
-          window.innerWidth > 1100 && <Orbit />
         }
         open={1}
       />
