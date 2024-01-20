@@ -44,7 +44,6 @@
   transition: background-color 0.5s, color 0.2s;
 }
 
-
 .projectCard:hover {
   cursor: pointer;
   background-color: var(--leaf);
@@ -53,6 +52,7 @@
 
 .projectImage {
   width: 320px;
+  max-width: 95%;
   border: 2px solid black;
   border-radius: 24px;
   margin-bottom: 12px;
