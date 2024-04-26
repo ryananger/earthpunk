@@ -4,41 +4,35 @@ import '../styles/style.css';
 import st from 'ryscott-st';
 import {mouse} from 'util';
 
-import Board from './Board.jsx';
+import Tile from './Tile.jsx';
+import Tiles from './Tiles.jsx';
+import Earthpunk from './Earthpunk.jsx';
+import Info from './Info.jsx';
 
 const isMobile = window.innerWidth < 720;
-const tileSize = st.tileSize = isMobile ? 60 : 80;
+const tileSize = st.tileSize = isMobile ? 40 : window.innerHeight < 900 ? 54 : 60;
+
+st.startX = 0;
+st.startY = 120;
 
 const App = function() {
-  var renderHead = function() {
-    return (
-      <>
-      {!isMobile && <small>press M to mix, and 3, 4, or 5 to set the size</small>}
-      {isMobile &&
-        <small className='buttons h'>
-          <div className='button v' onClick={()=>{st.mountBoard(st.size)}}>mix</div>
-          <div className='h'>
-            <div className='button v' onClick={()=>{st.mountBoard(3)}}>8</div>
-            <div className='button v' onClick={()=>{st.mountBoard(4)}}>15</div>
-            <div className='button v' onClick={()=>{st.mountBoard(5)}}>24</div>
-          </div>
-        </small>
-      }
-      </>
-    )
+  const [view, setView] = st.newState('view', useState(null));
+
+  const views = {
+    '15puzzl': <Info name='15puzzl'/>,
+    numberful: <Info name='numberful'/>,
+    sudoku:    <Info name='sudoku'/>
   };
 
   return (
     <div id='app' className='app v'>
-      {renderHead()}
-      <br/>
-      <Board/>
-      <br/>
-      <small>
-        <a href='https://ryscott.xyz/numberful'>numberful</a>&emsp; | &emsp;
-        <a href='https://ryscott.xyz/sudoku'>sudoku</a>&emsp; | &emsp;
-        created by <a href='https://ryscott.xyz/portfolio'>_________</a>
-      </small>
+      <div id='box'>
+        <div className='anchor'>
+          <Earthpunk/>
+          {views[view]}
+        </div>
+      </div>
+      <Tiles/>
     </div>
   );
 };

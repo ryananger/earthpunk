@@ -4,57 +4,69 @@ import st from 'ryscott-st';
 
 import Grain from './Grain.jsx';
 
-const Tile = function({coords}) {
-  const [board, setBoard] = st.handleBoard;
-  const [{x, y}, setPos] = useState(coords);
-  const [num, setNum] = useState(board[y]?.[x]);
-
+const Tile = function({input, coords, name}) {
   const tileSize = st.tileSize;
-  const style = {top: y * tileSize + 'px', left: x * tileSize + 'px'};
+  const actualPos = {x: st.startX + (coords.x * tileSize), y: st.startY + (coords.y * tileSize)};
 
-  var moveTile = function() {
-    var adj = {
-      top:    {x, y: y - 1},
-      bottom: {x, y: y + 1},
-      right:  {x: x + 1, y},
-      left:   {x: x - 1, y}
-    };
+  const [{x, y}, setPos] = useState(getRandomPosition());
+  const [val, setVal] = useState(input);
 
-    for (let key in adj) {
-      var entry = adj[key];
+  const style = {top: y + 'px', left: x + 'px', width: tileSize + 'px'};
+  const bounce = name !== 'earthpunk';
 
-      if (entry.x < 0 || entry.x > st.size - 1 || entry.y < 0 || entry.y > st.size - 1) {
-        continue;
-      }
+  const handleClick = function() {
+    if (name === 'earthpunk') {return};
 
-      if (board[entry.y] && board[entry.y][entry.x] === -1) {
-        var val = board[y][x];
-        var newBoard = board;
+    var link = document.getElementById(input + x + y + 'link');
 
-        newBoard[y][x] = -1;
-        newBoard[entry.y][entry.x] = val;
+    link.click();
+  };
 
-        setBoard(newBoard);
-        setPos({x: entry.x, y: entry.y});
-      }
-    }
+  const handleEnter = function() {
+    if (name === 'earthpunk') {return};
+
+    st.setView(name);
+  };
+
+  const handleExit = function() {
+    if (name === 'earthpunk') {return};
+
+    st.setView(null);
   };
 
   useEffect(()=>{
-    setPos(coords);
-    setNum(board[coords.y][coords.x]);
-  }, [coords]);
-
-  if (num === -1) {return};
+    setTimeout(()=>{
+      setPos(actualPos);
+    }, 100);
+  }, []);
 
   return (
-    <div id={'tile' + num}className='tileContainer v' style={{...style, width: tileSize + 'px'}} onClick={moveTile}>
-      <div className='tile v'>
-        <Grain/>
-        {num}
-      </div>
+    <div className={`tileContainer v ${bounce ? 'bounce' : ''}`} style={style} onClick={handleClick} onMouseEnter={handleEnter} onMouseLeave={handleExit}>
+      {name === 'earthpunk' && (
+        <div className='tile v'>
+          <Grain/>
+          {val}
+        </div>
+      )}
+      {name !== 'earthpunk' && (
+        <a className='tile v' href={`https://${name}.earthpunk.art`}>
+          <Grain/>
+          {val}
+        </a>
+      )}
     </div>
   );
+};
+
+const getRandomPosition = function() {
+  let x = (-window.innerWidth) + (Math.random() * window.innerWidth * 2);
+  let y = (window.innerHeight * 2) + (Math.random() * 2000);
+
+  if (Math.random() < 0.5) {
+    x *= -1;
+  }
+
+  return {x, y};
 };
 
 export default Tile;
