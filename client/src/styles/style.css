@@ -108,12 +108,10 @@ a:visited {
 }
 
 .rowLine {
-  width: 100%;
   border-bottom: 1px solid #ffffff60;
 }
 
 .columnLine {
-  height: 100%;
   border-right: 1px solid #ffffff60;
 }
 
@@ -138,6 +136,13 @@ a:visited {
   position: relative;
   overflow: hidden;
   font-size: 32px;
+}
+
+@media (max-width: 720px) {
+  .tile {
+    border-radius: 2px;
+    font-size: 1.2em;
+  }
 }
 
 a {

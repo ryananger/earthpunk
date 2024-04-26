@@ -14,7 +14,7 @@ let strs = {
 const Tiles = function() {
   const [lines, setLines] = useState([]);
   const [strings, setStrings] = useState(strs);
-  const [config, setConfig] = useState(Math.floor(Math.random() * 5));
+  const [config, setConfig] = useState(st.isMobile ? 2 : Math.floor(Math.random() * 5));
 
   const tileSize = st.tileSize;
 

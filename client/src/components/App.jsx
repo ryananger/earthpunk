@@ -9,11 +9,12 @@ import Tiles from './Tiles.jsx';
 import Earthpunk from './Earthpunk.jsx';
 import Info from './Info.jsx';
 
-const isMobile = window.innerWidth < 720;
-const tileSize = st.tileSize = isMobile ? 40 : window.innerHeight < 900 ? 54 : 60;
+const isMobile = st.isMobile = window.innerWidth < 720;
+const isTablet = window.innerWidth > 720 && window.innerHeight > window.innerWidth;
+const tileSize = st.tileSize = isMobile ? 32 : window.innerHeight < 900 ? 54 : 60;
 
 st.startX = 0;
-st.startY = 120;
+st.startY = tileSize * 2;
 
 const App = function() {
   const [view, setView] = st.newState('view', useState(null));
@@ -26,12 +27,14 @@ const App = function() {
 
   return (
     <div id='app' className='app v'>
-      <div id='box'>
-        <div className='anchor'>
-          <Earthpunk/>
-          {views[view]}
+      {!isMobile && !isTablet &&
+        <div id='box'>
+          <div className='anchor'>
+            <Earthpunk/>
+            {views[view]}
+          </div>
         </div>
-      </div>
+      }
       <Tiles/>
     </div>
   );
