@@ -10,6 +10,8 @@ const Tile = function({input, coords, name}) {
 
   const [{x, y}, setPos] = useState(getRandomPosition());
   const [val, setVal] = useState(input);
+  const [mounted, setMounted] = useState(false);
+  const [scrambled, setScrambled] = useState(false);
 
   const style = {top: y + 'px', left: x + 'px', width: tileSize + 'px'};
   const bounce = name !== 'earthpunk';
@@ -23,20 +25,42 @@ const Tile = function({input, coords, name}) {
   };
 
   const handleEnter = function() {
-    if (name === 'earthpunk') {return};
+    if (scrambled || name === 'earthpunk') {return};
 
     st.setView(name);
   };
 
   const handleExit = function() {
-    if (name === 'earthpunk') {return};
+    if (scrambled || name === 'earthpunk') {return};
 
     st.setView(null);
   };
 
   useEffect(()=>{
+    if (!mounted) {
+      return;
+    }
+
+    if (!('mission blog contact donate').includes(st.view)) {
+      setPos(actualPos);
+      setTimeout(()=>{
+        setScrambled(false);
+      }, 100);
+      return;
+    }
+
+    if (scrambled) {
+      return;
+    }
+
+    setPos({x: 720 + (Math.random() * 160), y: y - 80 + (Math.random() * 160)});
+    setScrambled(true);
+  }, [st.view]);
+
+  useEffect(()=>{
     setTimeout(()=>{
       setPos(actualPos);
+      setMounted(true);
     }, 100);
   }, []);
 

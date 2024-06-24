@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d client/dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "babel-plugin-file-loader": "^2.0.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
