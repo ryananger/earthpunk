@@ -41,7 +41,7 @@ const Tile = function({input, coords, name}) {
       return;
     }
 
-    if (!('mission blog contact donate').includes(st.view)) {
+    if (st.infoView || st.view === null) {
       setPos(actualPos);
       setTimeout(()=>{
         setScrambled(false);

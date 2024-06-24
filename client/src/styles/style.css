@@ -258,6 +258,11 @@ form svg {
   justify-content: center;
 }
 
+.midWing {
+  height: 100%;
+  padding: 2vh;
+}
+
 .info {
   background: #ffffff25;
   width: 280px;
@@ -268,30 +273,33 @@ form svg {
   margin: 2vh;
 }
 
-#earthpunk,
-#links,
-#mission,
-#contact,
-#blog,
-#donate {
-  position: unset;
-}
-
 .link {
   cursor: pointer;
 }
 
 #mission,
 #contact,
-#donate {
+#donate,
+#strategy {
   position: relative;
-  width: 420px;
+  width: 480px;
+}
+
+#contact,
+#donate,
+#mission,
+#strategy {
+  align-items: center;
 }
 
 #contact,
 #donate {
   text-align: center;
-  align-items: center;
+}
+
+#mission h2,
+#strategy h2 {
+  margin-bottom: 2vh;
 }
 
 #donate img {
@@ -300,6 +308,7 @@ form svg {
   box-sizing: border-box;
   border-radius: 24px;
   width: 280px;
+  aspect-ratio: 1;
   opacity: 0.8;
   margin: 2vh;
 }
@@ -321,6 +330,42 @@ form svg {
   height: 100%;
 }
 
+#strategy {
+  max-height: 100%;
+}
+
+#timeline {
+  justify-content: flex-start;
+  overflow: auto;
+
+  border: 2px #ffffff9d;
+  border-style: solid none;
+  padding: 1vh 0;
+}
+
+.list {
+  width: 90%;
+  margin: 8px 0;
+  text-align: left;
+}
+
+li {
+  font-size: small;
+  margin: 8px 0;
+}
+
 .texture {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+::-webkit-scrollbar {
+  border-style: none;
+  width: 0.4vw;
+  min-width: 6px;
+  height: 98%;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff9d;
+  border-radius: 4px;
 }

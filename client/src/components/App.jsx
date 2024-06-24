@@ -10,6 +10,7 @@ import Earthpunk from './Earthpunk.jsx';
 import Info from './Info.jsx';
 import Links from './Links.jsx';
 import Mission from './Mission.jsx';
+import Strategy from './Strategy.jsx';
 import Contact from './Contact.jsx';
 import Donate from './Donate.jsx';
 import Blog from './Blog.jsx';
@@ -24,13 +25,14 @@ st.startY = tileSize * 2;
 const App = function() {
   const [view, setView] = st.newState('view', useState(null));
 
-  const infoView = ('15puzzl numberful sudoku').includes(view);
+  const infoView = st.infoView = ('15puzzl numberful sudoku').includes(view);
 
   const views = {
     '15puzzl': <Info name='15puzzl'/>,
     numberful: <Info name='numberful'/>,
     sudoku:    <Info name='sudoku'/>,
     mission:   <Mission/>,
+    strategy:  <Strategy/>,
     contact:   <Contact/>,
     donate:    <Donate/>,
     blog:      <Blog/>
@@ -46,7 +48,9 @@ const App = function() {
               <Earthpunk/>
               <Links/>
             </div>
-            {!infoView && views[view]}
+            <div className='midWing v'>
+              {!infoView && views[view]}
+            </div>
             <div className='rightWing v'>
               {infoView && views[view]}
             </div>

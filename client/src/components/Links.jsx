@@ -14,6 +14,7 @@ const Links = function() {
   return (
     <div id='links' className={'info texture v ' + vis}>
       <h3 className='link' onClick={()=>{st.setView('mission')}}>mission</h3>
+      <h3 className='link' onClick={()=>{st.setView('strategy')}}>strategy</h3>
       {/* <h3 onClick={()=>{st.setView('blog')}}>blog</h3> */}
       <h3 className='link' onClick={()=>{st.setView('contact')}}>contact</h3>
       <h3 className='link' onClick={()=>{st.setView('donate')}}>donate</h3>
@@ -25,6 +26,7 @@ const Links = function() {
       <h3>inbound</h3>
       <div>techTree Academy</div>
       <div>gardenbot</div>
+      <div>gardenSmart</div>
       <br/>
     </div>
   );

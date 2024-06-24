@@ -6,6 +6,7 @@ const Mission = function() {
   return (
     <div id={'mission'} className={'info texture v'}>
       <div className='circle texture' onClick={()=>{st.setView(null)}}/>
+      <h2>mission</h2>
       At earthpunk, we are committed to empowering communities through the development of local resilience,
       with tools that enable and encourage sustainable growth by building synergistic systems, that act in the interest of life in general.
       <br/><br/>
