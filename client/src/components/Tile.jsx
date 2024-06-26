@@ -60,7 +60,10 @@ const Tile = function({input, coords, name}) {
   useEffect(()=>{
     setTimeout(()=>{
       setPos(actualPos);
-      setMounted(true);
+
+      setTimeout(()=>{
+        setMounted(true);
+      }, 100);
     }, 100);
   }, []);
 
