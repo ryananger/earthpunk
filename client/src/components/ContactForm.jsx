@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 
 import st from 'ryscott-st';
 
-emailjs.init({publicKey: 'z6Yf3PnbSVCrJhq0t'});
+emailjs.init({publicKey: 'x-whDEpbDVF9W3pTh'});
 
 const ContactForm = function() {
   const [sent, setSent] = useState(false);
@@ -13,7 +13,7 @@ const ContactForm = function() {
   const handleSubmit = function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('default_service', 'template_uz4dqsm', form.current)
+    emailjs.sendForm('default_service', 'template_gd8skyj', form.current)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
@@ -28,11 +28,11 @@ const ContactForm = function() {
   const renderForm = function() {
     return (
       <>
-      <form ref={form} className='v' onSubmit={handleSubmit}>
+      <form ref={form} className='v'>
         <input type='text' name='user_name' placeholder='Name?' required/>
         <input type='email' name='user_email' placeholder='Email?' required/>
         <textarea name='message' placeholder="What's up?" required/>
-        <SendIcon size={28}/>
+        <SendIcon size={28} onClick={handleSubmit}/>
       </form>
       </>
     );
@@ -41,6 +41,7 @@ const ContactForm = function() {
   const renderSent = function() {
     return (
       <div className='sentBox c'>
+        <br/>
         Message sent! You will receive a response shortly.
       </div>
     );
