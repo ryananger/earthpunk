@@ -5,6 +5,10 @@ import st from 'ryscott-st';
 const Links = function() {
   const [vis, setVis] = useState('hidden');
 
+  var handleClick = function(link) {
+    st.setView(link);
+  };
+
   useEffect(()=>{
     setTimeout(()=>{
       setVis('visible');
@@ -13,11 +17,11 @@ const Links = function() {
 
   return (
     <div id='links' className={'info texture v ' + vis}>
-      <h3 className='link' onClick={()=>{st.setView('mission')}}>mission</h3>
-      <h3 className='link' onClick={()=>{st.setView('strategy')}}>strategy</h3>
-      {/* <h3 onClick={()=>{st.setView('blog')}}>blog</h3> */}
-      <h3 className='link' onClick={()=>{st.setView('contact')}}>contact</h3>
-      <h3 className='link' onClick={()=>{st.setView('donate')}}>donate</h3>
+      <h3 className='link' onClick={()=>{handleClick('mission')}}>mission</h3>
+      <h3 className='link' onClick={()=>{handleClick('strategy')}}>strategy</h3>
+      {/* <h3 onClick={()=>{handleClick('blog')}}>blog</h3> */}
+      <h3 className='link' onClick={()=>{handleClick('contact')}}>contact</h3>
+      <h3 className='link' onClick={()=>{handleClick('donate')}}>donate</h3>
       <br/>
       <h3>demo</h3>
       <a href='http://communitii.earthpunk.art'>communitii</a>

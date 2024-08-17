@@ -32,7 +32,7 @@ const ContactForm = function() {
         <input type='text' name='user_name' placeholder='Name?' required/>
         <input type='email' name='user_email' placeholder='Email?' required/>
         <textarea name='message' placeholder="What's up?" required/>
-        <SendIcon size={28} onClick={handleSubmit}/>
+        <SendIcon className='icon' size={28} onClick={handleSubmit}/>
       </form>
       </>
     );

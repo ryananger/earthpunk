@@ -37,7 +37,7 @@ const Tile = function({input, coords, name}) {
   };
 
   useEffect(()=>{
-    if (!mounted) {
+    if (!mounted || window.innerWidth < window.innerHeight) {
       return;
     }
 

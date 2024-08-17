@@ -15,9 +15,7 @@ import Contact from './Contact.jsx';
 import Donate from './Donate.jsx';
 import Blog from './Blog.jsx';
 
-const isMobile = st.isMobile = window.innerWidth < 720;
-const isTablet = window.innerWidth > 720 && window.innerHeight > window.innerWidth;
-const tileSize = st.tileSize = isMobile ? 32 : window.innerHeight < 900 ? 54 : 60;
+const tileSize = st.tileSize = window.innerHeight < 900 ? 54 : 60;
 
 st.startX = 0;
 st.startY = tileSize * 2;
@@ -41,7 +39,6 @@ const App = function() {
   return (
     <div id='app' className='app v'>
       <Tiles/>
-      {!isMobile && !isTablet &&
         <div id='box'>
           <div className='anchor h'>
             <div className='leftWing v'>
@@ -56,7 +53,6 @@ const App = function() {
             </div>
           </div>
         </div>
-      }
     </div>
   );
 };

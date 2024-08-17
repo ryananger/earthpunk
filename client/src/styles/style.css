@@ -16,6 +16,11 @@
   --shadow: #39161096;
 }
 
+html {
+  background: radial-gradient(circle at bottom left, #c2edbaa3, transparent 40%), radial-gradient(circle at top right, #ffc2c2bd, transparent);
+  background-color: #a2d7a5;
+}
+
 html, body, #root, .app {
   display: flex;
   flex-direction: column;
@@ -28,8 +33,6 @@ html, body, #root, .app {
   width: 100%;
   font-size: 1.8vh;
   font-family: Jost, sans-serif;
-  background: radial-gradient(circle at bottom left, #c2edbaa3, transparent 40%), radial-gradient(circle at top right, #ffc2c2bd, transparent);
-  background-color: #a2d7a5;
   color: var(--darkText);
 }
 
@@ -139,13 +142,6 @@ a:visited {
   position: relative;
   overflow: hidden;
   font-size: 32px;
-}
-
-@media (max-width: 720px) {
-  .tile {
-    border-radius: 2px;
-    font-size: 1.2em;
-  }
 }
 
 a {
@@ -358,6 +354,10 @@ li {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ffffff' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
+.icon {
+  cursor: pointer;
+}
+
 ::-webkit-scrollbar {
   border-style: none;
   width: 0.4vw;
@@ -368,4 +368,48 @@ li {
 ::-webkit-scrollbar-thumb {
   background-color: #ffffff9d;
   border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+  .app {
+    overflow: unset;
+    overflow-x: hidden;
+    justify-content: flex-start;
+  }
+
+  .tiles {
+    width: 100vw;
+    justify-content: center;
+    margin-top: 8vh;
+    flex: none;
+  }
+
+  .tile {
+    border-radius: 2px;
+    font-size: 1.2em;
+  }
+
+  .info {
+    width: 88%;
+    max-width: 100%;
+    padding: 2vh;
+    margin: 2vh;
+  }
+  
+  #links {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .link {
+    cursor: pointer;
+  }
+  
+  #mission,
+  #contact,
+  #donate,
+  #strategy {
+    position: relative;
+    width: 88%;
+  }
 }
