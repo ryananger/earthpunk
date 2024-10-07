@@ -23,14 +23,12 @@ const Links = function() {
       <h3 className='link' onClick={()=>{handleClick('contact')}}>contact</h3>
       <h3 className='link' onClick={()=>{handleClick('donate')}}>donate</h3>
       <br/>
-      <h3>demo</h3>
-      <a href='http://communitii.earthpunk.art'>communitii</a>
+      <h3>projects</h3>
+      <a href='https://15puzzl.earthpunk.art'>puzzles</a>
+      <a href='https://communitii.net'>communitii</a>
       <a href='https://jupiterfalls.earthpunk.art'>jupiterFalls</a>
-      <br/>
-      <h3>inbound</h3>
-      <div>techTree Academy</div>
-      <div>gardenbot</div>
-      <div>gardenSmart</div>
+      <a href='https://techtree.academy'>techTree Academy</a>
+      <a href='https://stokk.biz'>stokk</a>
       <br/>
     </div>
   );

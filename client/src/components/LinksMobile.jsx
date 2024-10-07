@@ -29,16 +29,12 @@ const Links = function() {
         </div>
       <br/>
       <div className='v'>
-            <h3>demo</h3>
-            <a href='http://communitii.earthpunk.art'>communitii</a>
-            <a href='https://jupiterfalls.earthpunk.art'>jupiterFalls</a>
-      </div>
-      <br/>
-      <div className='v'>
-            <h3>inbound</h3>
-            <div>techTree Academy</div>
-            <div>gardenbot</div>
-            <div>gardenSmart</div>
+        <h3>projects</h3>
+        <a href='https://15puzzl.earthpunk.art'>puzzles</a>
+        <a href='https://communitii.net'>communitii</a>
+        <a href='https://jupiterfalls.earthpunk.art'>jupiterFalls</a>
+        <a href='https://techtree.academy'>techTree Academy</a>
+        <a href='https://stokk.biz'>stokk</a>
       </div>
     </div>
   );

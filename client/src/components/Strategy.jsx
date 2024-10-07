@@ -11,7 +11,7 @@ const Strategy = function() {
         Earthpunk is a multi-solving organization, founded in mid 2024, to create sustainable and integrative systems across various fields,
         with a focus on finding harmony between nature and technology.
         <br/><br/>
-        We aim to address complex global challenges through interconnected and sustainable strategies that enhance social, environmental, and economic well-being.
+        We aim to address complex global challenges through interconnected strategies that enhance social, environmental, and economic well-being.
       </small>
       <br/><br/>
       <div id='timeline' className='v'>
@@ -19,11 +19,11 @@ const Strategy = function() {
         <div className='list'>
           <li>Establish organization and begin development on communitii and early education projects.</li>
           <li>Seek investors and partners, and build founding staff.</li>
-          <li>Launch techTree Academy, and use it as a recruitment and development tool.</li>
           <li>Begin creation of gardenbot intellectual property.</li>
         </div>
         <h3>2025</h3>
         <div className='list'>
+          <li>Launch techTree Academy, and use it as a recruitment and development tool.</li>
           <li>Continue development on education projects, gardenSmart, and communitii.</li>
           <li>Build relationships with community organizations and begin user testing.</li>
           <li>Launch communitii and gardenSmart, and begin product integration.</li>
